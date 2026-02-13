@@ -1,0 +1,10 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/code-md", "destination": "/code-MD.html" }
+  ],
+  "functions": {
+    "api/code-md/create-session.js": { "maxDuration": 30 },
+    "api/code-md/session-status.js": { "maxDuration": 30 }
+  }
+}

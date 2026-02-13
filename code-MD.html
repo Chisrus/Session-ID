@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercenaire MD Thriller | Session WhatsApp</title>
+  <style>
+    :root {
+      --bg: #0d1b2a;
+      --bg-soft: #1b263b;
+      --card: #243b55;
+      --text: #f1f5f9;
+      --muted: #b8c4d6;
+      --accent: #30c48d;
+      --accent-2: #2aa77a;
+      --danger: #ff6b6b;
+      --border: rgba(255, 255, 255, 0.16);
+      --shadow: 0 20px 35px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 15%, #2f455f 0%, transparent 35%),
+        radial-gradient(circle at 85% 80%, #1f8a70 0%, transparent 30%),
+        linear-gradient(140deg, var(--bg), var(--bg-soft));
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: min(900px, 100%);
+      background: linear-gradient(165deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 24px;
+      backdrop-filter: blur(6px);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(1.4rem, 2vw, 2rem);
+    }
+
+    .sub {
+      margin: 0 0 20px;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 1.2fr 1fr;
+    }
+
+    @media (max-width: 860px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .panel {
+      background: rgba(4, 9, 16, 0.25);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      font-size: 1rem;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.06);
+      outline: none;
+    }
+
+    input[type="text"]:focus {
+      border-color: var(--accent);
+    }
+
+    .mode {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .mode label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+      font-weight: 500;
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      cursor: pointer;
+      user-select: none;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    button {
+      margin-top: 16px;
+      width: 100%;
+      border: 0;
+      border-radius: 10px;
+      padding: 13px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      color: #082018;
+      background: linear-gradient(180deg, var(--accent), var(--accent-2));
+      transition: transform 120ms ease, filter 120ms ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.03);
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+
+    .row {
+      display: flex;
+      gap: 8px;
+      margin: 8px 0;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .key {
+      min-width: 90px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .value {
+      font-weight: 600;
+      overflow-wrap: anywhere;
+    }
+
+    .result-box {
+      margin-top: 10px;
+      padding: 12px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px dashed var(--border);
+      min-height: 64px;
+    }
+
+    .code {
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+    }
+
+    .qr {
+      margin-top: 10px;
+      width: min(260px, 100%);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: white;
+      padding: 8px;
+    }
+
+    .msg {
+      margin-top: 12px;
+      font-size: 0.95rem;
+    }
+
+    .error {
+      color: var(--danger);
+    }
+
+    .ok {
+      color: #6df0be;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Mercenaire MD Thriller</h1>
+    <p class="sub">Entre le numero WhatsApp et choisis le mode de connexion: Pairing Code ou QR.</p>
+
+    <div class="grid">
+      <section class="panel">
+        <label for="phone">Numero WhatsApp</label>
+        <input id="phone" type="text" placeholder="Ex: 2250700000000" />
+
+        <div class="mode">
+          <label>
+            <input type="radio" name="mode" value="pair" checked />
+            Pairing Code
+          </label>
+          <label>
+            <input type="radio" name="mode" value="qr" />
+            QR Code
+          </label>
+        </div>
+
+        <button id="createBtn">Generer la session</button>
+        <div id="message" class="msg"></div>
+      </section>
+
+      <section class="panel">
+        <div class="row"><span class="key">Session ID</span><span id="sessionId" class="value">-</span></div>
+        <div class="row"><span class="key">Statut</span><span id="status" class="value">idle</span></div>
+        <div class="row"><span class="key">Mode</span><span id="mode" class="value">-</span></div>
+        <div class="row"><span class="key">Expire</span><span id="expiresAt" class="value">-</span></div>
+
+        <div class="result-box">
+          <div id="pairingCode" class="code"></div>
+          <img id="qrImage" class="qr" alt="QR Code" hidden />
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const createBtn = document.getElementById('createBtn');
+    const phoneInput = document.getElementById('phone');
+    const msgEl = document.getElementById('message');
+    const sessionIdEl = document.getElementById('sessionId');
+    const statusEl = document.getElementById('status');
+    const modeEl = document.getElementById('mode');
+    const expiresAtEl = document.getElementById('expiresAt');
+    const pairingCodeEl = document.getElementById('pairingCode');
+    const qrImageEl = document.getElementById('qrImage');
+
+    let pollTimer = null;
+    let currentSessionId = '';
+
+    function setMessage(text, type) {
+      msgEl.textContent = text || '';
+      msgEl.className = 'msg ' + (type || '');
+    }
+
+    function getMode() {
+      const checked = document.querySelector('input[name="mode"]:checked');
+      return checked ? checked.value : 'pair';
+    }
+
+    function sanitizePhone(value) {
+      return String(value || '').replace(/\D/g, '');
+    }
+
+    function updateSessionView(payload) {
+      sessionIdEl.textContent = payload.sessionId || '-';
+      statusEl.textContent = payload.status || '-';
+      modeEl.textContent = payload.mode || '-';
+      expiresAtEl.textContent = payload.expiresAt || '-';
+
+      pairingCodeEl.textContent = payload.pairingCode || '';
+      qrImageEl.hidden = true;
+      qrImageEl.removeAttribute('src');
+
+      if (payload.qrImageUrl) {
+        qrImageEl.src = payload.qrImageUrl;
+        qrImageEl.hidden = false;
+      } else if (payload.qrText) {
+        qrImageEl.src = `https://quickchart.io/qr?size=300&text=${encodeURIComponent(payload.qrText)}`;
+        qrImageEl.hidden = false;
+      }
+    }
+
+    async function fetchJSON(url, options) {
+      const response = await fetch(url, options);
+      let data = null;
+      try {
+        data = await response.json();
+      } catch (_) {
+        data = { ok: false, error: 'Reponse JSON invalide.' };
+      }
+
+      if (!response.ok || data.ok === false) {
+        const message = data.error || `Erreur HTTP ${response.status}`;
+        throw new Error(message);
+      }
+      return data;
+    }
+
+    function startPolling(sessionId) {
+      if (pollTimer) clearInterval(pollTimer);
+      pollTimer = setInterval(async () => {
+        try {
+          const data = await fetchJSON(`/api/code-md/session-status?sessionId=${encodeURIComponent(sessionId)}`);
+          updateSessionView(data);
+
+          if (data.status === 'paired' || data.status === 'failed' || data.status === 'expired') {
+            clearInterval(pollTimer);
+            pollTimer = null;
+          }
+        } catch (err) {
+          setMessage(err.message, 'error');
+          clearInterval(pollTimer);
+          pollTimer = null;
+        }
+      }, 3000);
+    }
+
+    createBtn.addEventListener('click', async () => {
+      createBtn.disabled = true;
+      setMessage('');
+
+      try {
+        const phoneNumber = sanitizePhone(phoneInput.value);
+        const mode = getMode();
+
+        if (!phoneNumber || phoneNumber.length < 8) {
+          throw new Error('Numero invalide.');
+        }
+
+        const data = await fetchJSON('/api/code-md/create-session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ phoneNumber, mode })
+        });
+
+        currentSessionId = data.sessionId;
+        updateSessionView(data);
+        setMessage(data.message || 'Session creee.', 'ok');
+
+        if (data.status === 'pending' || data.status === 'waiting') {
+          startPolling(currentSessionId);
+        }
+      } catch (err) {
+        setMessage(err.message, 'error');
+      } finally {
+        createBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

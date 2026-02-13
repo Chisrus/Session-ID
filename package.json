@@ -1,0 +1,21 @@
+{
+  "name": "mercenaire-md",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start:backend": "node src/backendServer.js",
+    "start:pair": "node index.js --pair",
+    "reset:auth": "powershell -NoProfile -Command \"if (Test-Path auth_info) { Remove-Item -Recurse -Force auth_info }\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@whiskeysockets/baileys": "^7.0.0-rc.9",
+    "qrcode-terminal": "^0.12.0"
+  }
+}
