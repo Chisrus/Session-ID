@@ -1,6 +1,7 @@
 {
   "cleanUrls": true,
   "rewrites": [
+    { "source": "/", "destination": "/code-MD.html" },
     { "source": "/code-md", "destination": "/code-MD.html" }
   ],
   "functions": {
