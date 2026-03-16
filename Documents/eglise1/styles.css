@@ -63,6 +63,138 @@ footer {
     bottom: 0;
 }
 
+/* Gallery Styles */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.gallery-caption h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.gallery-caption p {
+    margin: 0.5rem 0 0;
+    font-size: 0.9rem;
+}
+
+/* About Page Layout */
+.about-content {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.about-image {
+    flex: 0 0 300px;
+    text-align: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.image-caption {
+    margin-top: 0.5rem;
+    font-style: italic;
+    color: #666;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Service Cards */
+.services-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    width: 30%;
+    min-width: 200px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+}
+
+.service-card i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Hero Section */
+.hero {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin: 1rem 0 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
 @media (max-width: 600px) {
     nav li {
         display: block;
@@ -70,5 +202,21 @@ footer {
     }
     main {
         margin: 1rem;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-content {
+        flex-direction: column;
+    }
+    .about-image {
+        flex: 1;
+        max-width: 100%;
+    }
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    .service-card {
+        width: 100%;
     }
 }
