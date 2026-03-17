@@ -6,39 +6,119 @@
     <title>Paroisse Sainte Monique du Plateau Dokui</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        .hero {
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/eglise-interieur.jpg');
-            background-size: cover;
-            background-position: center;
-            padding: 6rem 2rem;
-        }
-    </style>
 </head>
 <body>
-    <header>
-        <div class="hero">
-            <h1>Paroisse Sainte Monique du Plateau Dokui</h1>
-            <p class="hero-subtitle">Bienvenue dans notre communauté chrétienne</p>
+    <header class="main-header">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-cross"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Paroisse Sainte Monique</h1>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="a-propos.html">À propos</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="a-propos.html">À propos</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="galerie.html">Galerie</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
     </header>
-    <main>
-        <section id="accueil">
-            <h2>Bienvenue</h2>
-            <p>Bienvenue sur le site de la Paroisse Sainte Monique du Plateau Dokui. Ici, vous trouverez des informations sur nos activités et services religieux.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 Paroisse Sainte Monique du Plateau Dokui</p>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Foi - Espérance - Charité</span>
+            <h2>Paroisse Sainte Monique<br>du Plateau Dokui</h2>
+            <p>Une communauté chrétienne vivante, accueillante et engagée dans la suite du Christ.</p>
+            <div class="hero-buttons">
+                <a href="services.html" class="btn-primary">Horaires des Messes</a>
+                <a href="#intentions" class="btn-secondary">Déposer une intention</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mass Times Section -->
+    <section class="mass-times-section">
+        <div class="mass-times-container">
+            <h3><i class="fas fa-clock"></i> Horaires des Messes</h3>
+            <div class="mass-times-grid">
+                <div class="mass-time-card">
+                    <div class="day">Dimanche</div>
+                    <div class="time">08h00</div>
+                    <div class="type">Messe dominicale</div>
+                </div>
+                <div class="mass-time-card">
+                    <div class="day">Mardi</div>
+                    <div class="time">18h30</div>
+                    <div class="type">Messe de semaine</div>
+                </div>
+                <div class="mass-time-card">
+                    <div class="day">Jeudi</div>
+                    <div class="time">18h30</div>
+                    <div class="type">Adoration & Messe</div>
+                </div>
+                <div class="mass-time-card">
+                    <div class="day">Samedi</div>
+                    <div class="time">18h00</div>
+                    <div class="type">Messe anticipée</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Saint Monica Section -->
+    <section class="st-monica-section">
+        <div class="section-container">
+            <div class="st-monica-grid">
+                <div class="st-monica-image">
+                    <img src="images/sainte-monique.jpg" alt="Sainte Monique">
+                </div>
+                <div class="st-monica-text">
+                    <span class="subtitle">Notre Sainte Patronne</span>
+                    <h2>Sainte Monique</h2>
+                    <p>Mère de Saint Augustin, Sainte Monique est le modèle de la persévérance dans la prière et de la patience maternelle. Sa foi inébranlable a conduit à la conversion de son fils et continue d'inspirer notre communauté aujourd'hui.</p>
+                    <p><em>"Rien n'est loin de Dieu."</em></p>
+                    <a href="a-propos.html" class="btn-text">Découvrir son histoire <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Announcements Section -->
+    <section class="announcements">
+        <div class="section-header">
+            <h2>Annonces Paroissiales</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="announcements-grid">
+            <div class="announcement-card">
+                <div class="date">20 Mars</div>
+                <h3>Réunion du Conseil Pastoral</h3>
+                <p>Tous les membres sont conviés à la salle paroissiale après la messe de 18h30.</p>
+            </div>
+            <div class="announcement-card highlight">
+                <div class="date">Pâques 2024</div>
+                <h3>Inscriptions Catéchèse</h3>
+                <p>Les inscriptions pour la nouvelle année pastorale sont ouvertes au secrétariat.</p>
+            </div>
+            <div class="announcement-card">
+                <div class="date">Dimanche</div>
+                <h3>Quête Spéciale</h3>
+                <p>La deuxième quête de ce dimanche sera consacrée aux travaux de rénovation.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 Paroisse Sainte Monique du Plateau Dokui</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

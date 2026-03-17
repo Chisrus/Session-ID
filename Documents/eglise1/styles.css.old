@@ -1,0 +1,194 @@
+/* Professional Church Website - Sainte Monique Parish */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+    --primary-gold: #c9a227;
+    --deep-navy: #1a2744;
+    --soft-cream: #faf8f3;
+    --warm-white: #ffffff;
+    --text-dark: #2d3748;
+    --text-light: #718096;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--soft-cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Header */
+.top-bar {
+    background-color: var(--deep-navy);
+    color: white;
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.main-header {
+    background: var(--warm-white);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-gold), #d4af37);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.logo-text h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    color: var(--deep-navy);
+    font-weight: 700;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--primary-gold);
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(rgba(26, 39, 68, 0.7), rgba(26, 39, 68, 0.8)), 
+                url('images/eglise-interieur.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Mass Times */
+.mass-times-section {
+    background: var(--warm-white);
+    padding: 3rem 2rem;
+    margin-top: -50px;
+    position: relative;
+    z-index: 10;
+}
+
+.mass-times-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, var(--deep-navy), #2d3748);
+    border-radius: 20px;
+    padding: 2rem;
+    color: white;
+}
+
+.mass-times-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Sections */
+.welcome-section, .services-section, .gallery-section, .contact-section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    color: var(--deep-navy);
+}
+
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Footer */
+.main-footer {
+    background: var(--deep-navy);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+    
+    .mass-times-grid {
+        grid-template-columns: 1fr;
+    }
+}
